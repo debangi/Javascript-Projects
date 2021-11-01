@@ -14,11 +14,13 @@ h1 {
   padding: 0;
   color: rgba(70, 0, 0, 0.7);
   font-weight: 900;
+  padding: 0 3rem;
 }
 h2 {
   color: rgba(70, 0, 0, 0.9);
   font-family: cursive;
   font-weight: 500;
+  padding: 0 2.5rem;
 }
 button {
   outline: none;
