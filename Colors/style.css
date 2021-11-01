@@ -1,0 +1,28 @@
+body{
+    height: 90vh;
+    display: grid;
+    place-items: center;
+    transition: all .3s;
+}
+p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family:cursive;
+    padding: 0;
+    color: rgba(70,0,0,.7);
+    font-weight: 700;
+}
+button{
+    outline: none;
+    border: 1px solid #000;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+    transition: all .3s;
+}
+button:hover{
+    transform: scale(1.1);
+}
+button:active{
+    transform: translateY(8px);
+}
