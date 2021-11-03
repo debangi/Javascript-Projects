@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&display=swap");
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffecfa;
+/*   background-image from  heropatterns.com */
+/*   Skip the background image */
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,248,1) 100%);
+  color: rgb(110, 2, 74);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(110, 2, 74);
+  color: white;
+  font-size: 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.quote__container {
+  /* width: auto;
+  max-width: 900px; */
+  width: 80vw;
+  height: 60vh;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 10px 10px rgba(105, 5, 60, 0.2);
+  backdrop-filter: blur(2px) saturate(100%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote__text {
+  font-size: 2.75rem;
+}
+.quote::selection {
+  color: rgb(85, 15, 64);
+  background-color: rgb(226, 157, 217);
+}
+.long__quote {
+  font-size: 2rem;
+}
+.fa-quote-left {
+  font-size: 4rem;
+  opacity: 0.7;
+}
+.quote__author {
+  margin-top: 15px;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+}
+.author::selection {
+  color: rgb(85, 15, 64);
+  background-color: rgb(226, 157, 217);
+}
+.button__container {
+  margin-top: 15px;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+}
+.btn {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgb(61, 29, 54);
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0px 0.4rem rgba(102, 74, 94, 0.65);
+  transition: all 0.2s;
+}
+.btn:active {
+  transform: translateY(0.3rem);
+  box-shadow: 0 0.1rem rgba(102, 74, 94, 0.65);
+}
+.btn:hover {
+  filter: brightness(200%);
+}
+.btn__twitter:hover {
+  color: #38a1f3;
+}
+.btn__facebook:hover {
+  color: #3b5998;
+}
+/* loader */
+.loader {
+  border: 16px solid #eba8f5b6;
+  border-top: 16px solid #391e3d;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+/* footer */
+.footer {
+  font-size: 1.2rem;
+}
+.fa-heart {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  animation: pulsate 1s infinite;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    font-size: 2.2rem;
+  }
+  .quote__container {
+    margin: auto 10px;
+  }
+  .quote__text {
+    font-size: 2.5rem;
+  }
+  .quote__author {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: 2rem;
+  }
+  .quote__container {
+    margin: auto 10px;
+  }
+  .quote__text {
+    font-size: 1.8rem;
+  }
+  .quote__author {
+    font-size: 1.2rem;
+  }
+  .btn {
+    font-size: 1rem;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+  }
+  .button__container {
+    gap: 0.5rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
