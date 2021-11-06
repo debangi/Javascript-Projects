@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
     <title>Gradient Generator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Generate a random gradient color</h1>
-    <button>Click Me !</button>
-    <h2>linear-gradient(120deg, red, yellow)</h2>
-</body>
+    <button class="clickMe">Click Me !</button>
+    <div class="cssCode">
+      <input
+        type="text"
+        class="code"
+        value="background-image:linear-gradient(120deg, red, yellow);"
+      />
+      <button class="copy">Copy</button>
+    </div>
+  </body>
 </html>

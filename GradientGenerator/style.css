@@ -16,11 +16,23 @@ h1 {
   font-weight: 900;
   padding: 0 3rem;
 }
-h2 {
+.cssCode {
+  background-color: blue;
+}
+.code {
+  font-size: 1rem;
   color: rgba(70, 0, 0, 0.9);
   font-family: monospace;
   font-weight: 500;
-  padding: 0 2.5rem;
+  width: 60vw;
+  height: auto;
+  padding: 0 1rem;
+  border: none;
+}
+.code::selection {
+  background-color: green;
+  border: none;
+  outline: none;
 }
 button {
   outline: none;
@@ -30,9 +42,24 @@ button {
   background-color: white;
   transition: all 0.3s;
 }
-button:hover {
+.clickMe:hover {
   transform: scale(1.1);
 }
-button:active {
+.clickMe:active {
   transform: translateY(8px);
+}
+.cssCode {
+  display: flex;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.copy {
+  border-radius: inherit;
+}
+.copy:hover {
+  background-color: rgb(133, 243, 8);
+  border: #fff;
+  font-size: 1rem;
+  font-weight: 700;
 }
