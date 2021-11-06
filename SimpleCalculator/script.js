@@ -13,9 +13,9 @@ keysEls.forEach((key) => {
   // 2) equal key is clicked
   else if (key.classList.contains("equals")) {
     key.addEventListener("click", function () {
-      //if there's no value to be evaluated return
+      // if there's no value to be evaluated return
       if (screenEl.value === "") return;
-      //else evaluate
+      // else evaluate
       let val = screenEl.value;
       screenEl.value = eval(val);
     });
@@ -23,7 +23,7 @@ keysEls.forEach((key) => {
   // 3) func or digit key is clicked
   else {
     key.addEventListener("click", function () {
-      //first input is a function
+      // first input is a function
       if (screenEl.value === "" && key.classList.contains("func")) return;
       else if (key.classList.contains("func")) {
         // if the previous input is a function, return
