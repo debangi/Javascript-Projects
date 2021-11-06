@@ -15,7 +15,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 35rem;
-  max-width: 90%;
+  max-width: 100%;
   display: grid;
   grid-template-rows: 12rem 23rem;
   font-size: 2rem;
@@ -34,13 +34,14 @@ body {
   border: none;
 }
 .keys {
+  width: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   color: #fff;
 }
 .key {
-  width: 100%;
+  width: 95%;
   display: grid;
   place-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
