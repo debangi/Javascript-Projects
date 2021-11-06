@@ -11,7 +11,7 @@ body {
 }
 .container {
   width: 95%;
-  height: 90vh;
+  height: 80vh;
   margin: auto;
   display: grid;
   place-items: center;
