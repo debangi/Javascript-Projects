@@ -1,56 +1,56 @@
-const hourEl = document.querySelector(".hour");
-const minEl = document.querySelector(".min");
-const secEl = document.querySelector(".sec");
-const milisecEl = document.querySelector(".milisec");
+const hourEl = document.querySelector("#hour");
+const minuteEl = document.querySelector("#min");
+const secondEl = document.querySelector("#sec");
+const miliSecondEl = document.querySelector("#milisec");
+const startBtn = document.querySelector("#start");
+const stopBtn = document.querySelector("#stop");
+const resetBtn = document.querySelector("#reset");
 
-let timeBegan = null;
-let timeStopped = null;
-let pauseDuration = 0;
-let startInterval = null;
+let hour = 00;
+let minute = 00;
+let second = 00;
+let miliSecond = 00;
 let timerOn = false;
 
-window.addEventListener("click", () => {
-  if (!timerOn) {
-    startTimer();
-    timerOn = true;
-  } else {
-    stopTimer();
-    timerOn = false;
+stopwatch = () => {
+  if (timerOn) {
+    miliSecond += 1;
+    if (miliSecond === 100) {
+      second += 1;
+      miliSecond = 0;
+    }
+    if (second === 60) {
+      minute += 1;
+      second = 0;
+    }
+    if (minute === 60) {
+      hour += 1;
+      minute = 0;
+      second = 0;
+    }
+    hourEl.textContent = hour < 10 ? "0" + hour : hour;
+    minuteEl.textContent = minute < 10 ? "0" + minute : minute;
+    secondEl.textContent = second < 10 ? "0" + second : second;
+    miliSecondEl.textContent = miliSecond < 10 ? "0" + miliSecond : miliSecond;
+    setTimeout("stopwatch()", 10);
   }
-});
-window.addEventListener("dblclick", () => {
-  resetTimer();
-});
-startTimer = () => {
-  if (timeBegan === null) timeBegan = new Date();
-  if (timeStopped !== null) pauseDuration += new Date() - timeStopped;
-  startInterval = setInterval(clockRunning, 10);
 };
-stopTimer = () => {
-  timeStopped = new Date();
-  clearInterval(startInterval);
+start = () => {
+  timerOn = true;
+  stopwatch();
 };
-clockRunning = () => {
-  let currentTime = new Date();
-  let timeElapsed = new Date(currentTime - timeBegan - pauseDuration);
-  let hours = timeElapsed.getUTCHours();
-  let minutes = timeElapsed.getUTCMinutes();
-  let seconds = timeElapsed.getUTCSeconds();
-  let miliseconds = timeElapsed.getUTCMilliseconds();
-  miliseconds = Math.floor(miliseconds / 10);
-  hourEl.textContent = hours < 10 ? "0" + hours : hours;
-  minEl.textContent = minutes < 10 ? "0" + minutes : minutes;
-  secEl.textContent = seconds < 10 ? "0" + seconds : seconds;
-  milisecEl.textContent = miliseconds < 10 ? "0" + miliseconds : miliseconds;
+stop = () => {
+  timerOn = false;
 };
-resetTimer = () => {
-  clearInterval(startInterval);
-  timeBegan = null;
-  timeStopped = null;
-  pauseDuration = 0;
+reset = () => {
+  timerOn = false;
   hourEl.textContent =
-    minEl.textContent =
-    secEl.textContent =
-    milisecEl.textContent =
+    minuteEl.textContent =
+    secondEl.textContent =
+    miliSecondEl.textContent =
       "00";
 };
+
+startBtn.addEventListener("click", start);
+stopBtn.addEventListener("click", stop);
+resetBtn.addEventListener("click", reset);

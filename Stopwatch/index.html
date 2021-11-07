@@ -9,16 +9,21 @@
     <title>Stopwatch</title>
   </head>
   <body>
-    <h1>Single Click - start/stop</h1>
-    <h1>Double Click - Reset</h1>
-    <div class="stopwatch">
-      <div class="hour">00</div>
-      <div class="seperator">:</div>
-      <div class="min">00</div>
-      <div class="seperator">:</div>
-      <div class="sec">00</div>
-      <div class="seperator">:</div>
-      <div class="milisec">00</div>
+    <div class="container">
+      <div class="time">
+        <span class="digit" id="hour">00</span>
+        <span class="unit">Hr</span>
+        <span class="digit" id="min">00</span>
+        <span class="unit">Min</span>
+        <span class="digit" id="sec">00</span>
+        <span class="unit">Sec</span>
+        <span class="digit" id="milisec">00</span>
+      </div>
+      <div class="btnContainer">
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="stop">Stop</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
     </div>
   </body>
 </html>
