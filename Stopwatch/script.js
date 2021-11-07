@@ -6,12 +6,15 @@ const startBtn = document.querySelector("#start");
 const stopBtn = document.querySelector("#stop");
 const resetBtn = document.querySelector("#reset");
 
-let hour = 00;
-let minute = 00;
-let second = 00;
-let miliSecond = 00;
-let timerOn = false;
-
+let hour, minute, second, miliSecond, timerOn;
+init = () => {
+  hour = 00;
+  minute = 00;
+  second = 00;
+  miliSecond = 00;
+  timerOn = false;
+};
+init();
 stopwatch = () => {
   if (timerOn) {
     miliSecond += 1;
@@ -43,7 +46,7 @@ stop = () => {
   timerOn = false;
 };
 reset = () => {
-  timerOn = false;
+  init();
   hourEl.textContent =
     minuteEl.textContent =
     secondEl.textContent =
