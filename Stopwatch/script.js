@@ -5,7 +5,7 @@ const miliSecondEl = document.querySelector("#milisec");
 const startBtn = document.querySelector("#start");
 const stopBtn = document.querySelector("#stop");
 const resetBtn = document.querySelector("#reset");
-
+console.log("hi");
 let hour, minute, second, miliSecond, timerOn;
 init = () => {
   hour = 00;
