@@ -15,7 +15,7 @@ let timerOn = false;
 stopwatch = () => {
   if (timerOn) {
     miliSecond += 1;
-    if (miliSecond === 1000) {
+    if (miliSecond === 100) {
       second += 1;
       miliSecond = 0;
     }
@@ -32,7 +32,7 @@ stopwatch = () => {
     minuteEl.textContent = minute < 10 ? "0" + minute : minute;
     secondEl.textContent = second < 10 ? "0" + second : second;
     miliSecondEl.textContent = miliSecond < 10 ? "0" + miliSecond : miliSecond;
-    setTimeout("stopwatch()", 1);
+    setTimeout("stopwatch()", 10);
   }
 };
 start = () => {
