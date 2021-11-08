@@ -114,6 +114,9 @@ body {
   }
 }
 @media (max-width: 490px) {
+  .container {
+    height: 60vh;
+  }
   .headText {
     font-size: 1rem;
     letter-spacing: 3px;
