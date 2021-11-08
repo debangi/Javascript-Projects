@@ -52,9 +52,10 @@ body {
   font-weight: 700;
   color: rgb(0, 0, 0);
   padding: 0 2rem;
-  border-width: 1rem;
+  /* border-width: 1rem;
   border-style: ridge;
-  border-color: rgb(0, 255, 200);
+  border-color: rgb(0, 255, 200); */
+  border: 1rem ridge rgb(255, 0, 212);
 }
 .digit {
   font-family: "Poppins", sans-serif;
