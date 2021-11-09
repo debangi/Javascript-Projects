@@ -35,6 +35,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5.125);
   color: #fff;
 }
+.weather {
+  display: flex;
+  flex-direction: column;
+}
 .search {
   display: flex;
   justify-content: space-between;
@@ -55,6 +59,7 @@ body {
 .searchBar {
   background-color: rgba(100, 101, 102, 0.3);
   padding: 0 1rem;
+  color: #fff;
 }
 .searchBar::placeholder {
   color: rgb(255, 255, 255);
@@ -63,7 +68,7 @@ body {
   border: none;
   outline: none;
   background-color: rgba(121, 123, 126, 0.815);
-  color: rgba(5, 0, 0, 0.651);
+  color: rgb(255, 255, 255);
 }
 .searchBtn {
   width: 3rem;
@@ -80,4 +85,57 @@ body {
 }
 .temp {
   font-size: 1rem;
+}
+.descriptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .searchBar,
+  .searchBtn {
+    font-size: 1.2rem;
+  }
+  .city {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 580px) {
+  .container {
+    padding: 2rem 3rem;
+    gap: 2rem;
+  }
+  .weather {
+    gap: 1.3rem;
+  }
+  .search {
+    gap: 0.5rem;
+    height: 2.5rem;
+    width: 100%;
+  }
+  .searchBar,
+  .searchBtn {
+    font-size: 1.1rem;
+  }
+  .city {
+    font-size: 1.5rem;
+  }
+  .temp,
+  .descriptionContainer,
+  .humidity,
+  .wind {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 460px) {
+  .container {
+    padding: 2rem 3rem;
+    gap: 2rem;
+    width: 95%;
+  }
+  .weather {
+    gap: 0.5rem;
+  }
 }
