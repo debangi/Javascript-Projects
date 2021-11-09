@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-image: url("https://source.unsplash.com/1600x900/?rain,sky,sun,ocean,sea,cloud");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(0px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5.125);
+  color: #fff;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  width: 100%;
+}
+.searchBar,
+.searchBtn {
+  background-color: rgba(2, 18, 34, 0.151);
+  border-radius: 100px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+}
+.searchBar {
+  padding: 0 1rem;
+}
+.searchBar::placeholder {
+  color: #000;
+}
+.searchBar:focus {
+  border: none;
+  outline: none;
+  background-color: rgba(2, 18, 34, 0.5);
+  color: #fff;
+}
+.searchBtn {
+  width: 3rem;
+  border: none;
+}
+.searchBtn:active {
+  background-color: rgba(2, 18, 34, 0.5);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.city {
+  font-size: 3rem;
+}
+.temp {
+  font-size: 2rem;
+  font-weight: 600;
+}
