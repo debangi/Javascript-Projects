@@ -1,7 +1,9 @@
 const cityEl = document.querySelector(".cityName");
 const iconEl = document.querySelector(".weatherIcon");
 const descriptionEl = document.querySelector(".description");
-const tempEl = document.querySelector(".temp");
+const minTempEl = document.querySelector(".minValue");
+const maxTempEl = document.querySelector(".maxValue");
+// const tempEl = document.querySelector(".temp");
 const humidityEl = document.querySelector(".humidityValue");
 const speedEl = document.querySelector(".windValue");
 
@@ -32,12 +34,15 @@ let weather = {
     cityEl.textContent = weatherData.name;
     iconEl.src = `https://openweathermap.org/img/wn/${weatherData.icon}.png`;
     descriptionEl.textContent = weatherData.description;
-    tempEl.innerHTML = `<span class="minTemp">Min: ${weatherData.tempMin}℃</span>
-    <span class="maxTemp">Max: ${weatherData.tempMax}℃</span>`;
+    // tempEl.innerHTML = `<span class="minTemp">Min: ${weatherData.tempMin}℃</span>
+    // <span class="maxTemp">Max: ${weatherData.tempMax}℃</span>`;
+    minTempEl.textContent = `${weatherData.tempMin}℃`;
+    maxTempEl.textContent = `${weatherData.tempMax}℃`;
     humidityEl.textContent = `${weatherData.humidity}%`;
     speedEl.textContent = `${weatherData.speed} km/h`;
   },
   search: function () {
+    // this.changeBackground();
     const cityName = cityInput.value;
     weather.fetchWeather(cityName);
     cityInput.value = "";
