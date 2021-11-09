@@ -12,3 +12,4 @@
 ## LEVEL 2
 
 - Random Quote Generator [Live Demo](https://quotes-generator-debangi.netlify.app) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RandomQuote)
+- Weather App [Live Demo](https://weather-app-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/WeatherApp)
