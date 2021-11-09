@@ -3,7 +3,6 @@ const iconEl = document.querySelector(".weatherIcon");
 const descriptionEl = document.querySelector(".description");
 const minTempEl = document.querySelector(".minValue");
 const maxTempEl = document.querySelector(".maxValue");
-// const tempEl = document.querySelector(".temp");
 const humidityEl = document.querySelector(".humidityValue");
 const speedEl = document.querySelector(".windValue");
 
@@ -12,6 +11,7 @@ const searchBtn = document.querySelector(".searchBtn");
 
 let weather = {
   apiKey: "1f0ed48420981eeb4231420b2b4de4cc",
+
   fetchWeather: function (city) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
@@ -34,8 +34,6 @@ let weather = {
     cityEl.textContent = weatherData.name;
     iconEl.src = `https://openweathermap.org/img/wn/${weatherData.icon}.png`;
     descriptionEl.textContent = weatherData.description;
-    // tempEl.innerHTML = `<span class="minTemp">Min: ${weatherData.tempMin}℃</span>
-    // <span class="maxTemp">Max: ${weatherData.tempMax}℃</span>`;
     minTempEl.textContent = `${weatherData.tempMin}℃`;
     maxTempEl.textContent = `${weatherData.tempMax}℃`;
     humidityEl.textContent = `${weatherData.humidity}%`;
