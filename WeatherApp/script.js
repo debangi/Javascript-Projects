@@ -10,11 +10,11 @@ const cityInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 
 let weather = {
-  // apiKey: "1f0ed48420981eeb4231420b2b4de4cc",
+  apiKey: "1f0ed48420981eeb4231420b2b4de4cc",
 
   fetchWeather: function (city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data))
