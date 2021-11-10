@@ -13,6 +13,8 @@ _Making 1 project a day for practice_
 - To Do List App (on the way...)
 - Analog Clock (on the way...)
 - Key Code Generator (on the way...)
+- Binary Decoder App (on the way...)
+- Quiz App (on the way...)
 
 ## LEVEL 2 - Uses API calls to fetch data
 
@@ -21,4 +23,6 @@ _Making 1 project a day for practice_
 - Recipe App (on the way...)
 - Joke Generator (on the way...)
 - Number Facts (on the way...)
--
+- Pokemon API (on the way...)
+- Wikipedia API (on the way...)
+- Marvel API (on the way...)
