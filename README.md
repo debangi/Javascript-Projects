@@ -16,7 +16,7 @@ _Making 1 project a day for practice_
 - Binary Decoder App (on the way...)
 - Quiz App (on the way...)
 
-## LEVEL 2 - Uses API calls to fetch data
+## LEVEL 2 - Uses API to fetch data
 
 - Random Quote Generator [Live Demo](https://quotes-generator-debangi.netlify.app) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RandomQuote)
 - Weather App [Live Demo](https://weather-app-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/WeatherApp)
