@@ -15,6 +15,7 @@ _Making 1 project a day for practice_
 - Key Code Generator (on the way...)
 - Binary Decoder App (on the way...)
 - Quiz App (on the way...)
+- rgb to hex converter (on the way...)
 
 ## LEVEL 2 - Uses API to fetch data
 
