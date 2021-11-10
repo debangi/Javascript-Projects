@@ -1,3 +1,5 @@
+import WEATHER_API_KEY from "./weatherApiKey.js";
+
 const cityEl = document.querySelector(".cityName");
 const iconEl = document.querySelector(".weatherIcon");
 const descriptionEl = document.querySelector(".description");
@@ -9,12 +11,13 @@ const speedEl = document.querySelector(".windValue");
 const cityInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 
+// const apiKey = "1f0ed48420981eeb4231420b2b4de4cc";
+console.log(WEATHER_API_KEY);
+const apiKey = WEATHER_API_KEY;
 let weather = {
-  apiKey: "1f0ed48420981eeb4231420b2b4de4cc",
-
   fetchWeather: function (city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data))
