@@ -65,3 +65,5 @@ window.addEventListener("scroll", () => {
 });
 
 getPhotos();
+
+// video 36, 8:50
