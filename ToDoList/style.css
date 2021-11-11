@@ -6,12 +6,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  background-color: lawngreen;
+  background-image: linear-gradient(to right, #e22865, #37adcd);
+  /* background-color: lawngreen; */
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   width: 80%;
   margin: 1rem auto;
-  background-color: lightcoral;
 }
 .header {
   display: flex;
@@ -20,6 +23,82 @@ body {
 }
 .title {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  font-size: 3rem;
+  font-size: 4rem;
+  color: #fff;
+}
+
+.userInput {
+  display: flex;
+}
+.userInput input {
+  width: 30rem;
+  outline: none;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.userInput input:focus {
+  box-shadow: 0 0 5px #e22865;
+  border: 1px solid #e22865;
+}
+
+.addBtn {
+  cursor: pointer;
+  padding: 8px;
+  width: fit-content;
+  color: black;
+  transition: 0.3s;
+  outline: none;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.addBtn:hover {
+  background-color: transparent;
+  color: white;
+}
+.itemsContainer {
+  margin: auto;
+  width: 60rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.listItem {
+  font-size: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listText {
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+  padding: 0 1rem;
+}
+
+.listText:focus {
+  border: none;
+  outline: none;
+}
+.actions {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: grey;
+}
+.actions ion-icon:hover {
+  color: rgb(48, 46, 46);
 }
