@@ -1,8 +1,9 @@
 const inputEl = document.querySelector(".inputBar");
 const submitBtn = document.querySelector(".addBtn");
 const itemsContainer = document.querySelector(".itemsContainer");
+let targetEl;
 
-submitBtn.addEventListener("click", function () {
+addTask = () => {
   const task = inputEl.value;
   if (!task) {
     alert("Please fill out the task!");
@@ -16,21 +17,34 @@ submitBtn.addEventListener("click", function () {
   </div>
 </li>`;
   itemsContainer.insertAdjacentHTML("beforeend", markup);
-});
+  inputEl.value = "";
+};
+clickHandler = (e) => {
+  targetEl = e.target;
+  if (targetEl) {
+    if (targetEl.classList.contains("checkBtn")) targetEl.style.color = "green";
 
-document.body.addEventListener("click", function (e) {
-  const targetEl = e.target;
-  if (targetEl && targetEl.classList.contains("checkBtn")) {
-    targetEl.style.color = "green";
-  } else if (targetEl && targetEl.classList.contains("editBtn")) {
-    console.log("editabble");
-    console.log(targetEl);
-    console.log(targetEl.closest(".listItem").querySelector(".listText"));
-    targetEl
-      .closest(".listItem")
-      .querySelector(".listText")
-      .removeAttribute("readonly");
-  } else if (targetEl && targetEl.classList.contains("removeBtn")) {
-    targetEl.closest(".listItem").remove();
+    if (targetEl.classList.contains("editBtn")) {
+      targetEl
+        .closest(".listItem")
+        .querySelector(".listText")
+        .removeAttribute("readonly");
+      targetEl.closest(".listItem").querySelector(".listText").select();
+    }
+    if (targetEl.classList.contains("removeBtn"))
+      targetEl.closest(".listItem").remove();
   }
-});
+};
+keyUpHandler = (e) => {
+  targetEl = e.target;
+  if (targetEl && e.key === "Enter") {
+    if (targetEl.classList.contains("listText")) {
+      targetEl.setAttribute("readonly", true);
+    }
+    if (targetEl.classList.contains("inputBar")) addTask();
+  }
+};
+
+document.body.addEventListener("click", clickHandler);
+document.body.addEventListener("keyup", keyUpHandler);
+submitBtn.addEventListener("click", addTask);
