@@ -9,7 +9,11 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-image: linear-gradient(to right, #e22865, #37adcd);
+  background-image: linear-gradient(
+    to right,
+    rgb(171, 45, 175),
+    rgb(16, 174, 96)
+  );
 }
 .container {
   display: flex;
