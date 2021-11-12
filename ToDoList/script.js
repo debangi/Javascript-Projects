@@ -7,6 +7,7 @@ addTask = () => {
   const task = inputEl.value;
   if (!task) {
     alert("Please fill out the task!");
+    return;
   }
   const markup = `<li class="listItem">
   <input type="text" class="listText" value="${task}" readonly />
