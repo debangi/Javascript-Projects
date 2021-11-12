@@ -9,7 +9,7 @@ addTask = () => {
     alert("Please fill out the task!");
   }
   const markup = `<li class="listItem">
-  <input type="text" class="listText" value=${task} readonly />
+  <input type="text" class="listText" value="${task}" readonly />
   <div class="actions">
     <ion-icon class="checkBtn" id="checkBtn" name="checkmark-circle"></ion-icon>
     <ion-icon class="editBtn" name="create"></ion-icon>
