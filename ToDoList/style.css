@@ -33,8 +33,8 @@ body {
 .userInput {
   display: flex;
 }
-.userInput .inputBar {
-  width: 40rem;
+.inputBar {
+  width: 30rem;
   outline: none;
   padding: 8px;
   border: 1px solid lightgray;
@@ -43,7 +43,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.userInput .inputBar:focus {
+.inputBar:focus {
   box-shadow: 0 0 5px #e22865;
   border: 1px solid #e22865;
 }
@@ -74,7 +74,6 @@ body {
 }
 .listItem {
   border-radius: 1rem;
-  font-size: 2rem;
   padding: 1.5rem;
   background-color: #fff;
   display: flex;
@@ -123,11 +122,67 @@ body {
     font-size: 6rem;
   }
   .addBtn {
-    padding: 1rem 2rem;
+    padding: 1rem;
     font-size: 2rem;
   }
   .inputBar {
-    padding: 2rem;
+    width: 40rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+  }
+  .itemsContainer {
+    width: 45rem;
+  }
+  .listItem {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 560px) {
+  .header {
+    gap: 1rem;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .addBtn {
+    padding: 1rem;
+  }
+  .inputBar {
+    width: 30rem;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  .itemsContainer {
+    width: 40rem;
+  }
+  .listItem {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .addBtn {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .inputBar {
+    width: 22rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  .itemsContainer {
+    width: 30rem;
+  }
+  .listItem {
+    padding: 1rem;
+  }
+  .listText {
+    font-size: 1.5rem;
+  }
+  .listText:not(:read-only) {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+  }
+  .actions {
     font-size: 2rem;
   }
 }
