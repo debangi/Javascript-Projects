@@ -21,9 +21,12 @@ addTask = () => {
 };
 clickHandler = (e) => {
   targetEl = e.target;
+  // check if target Element exists
   if (targetEl) {
+    // 1) if target is check Button, change color to green
     if (targetEl.classList.contains("checkBtn")) targetEl.style.color = "green";
 
+    // 2) if target is edit Button, remove readonly attribute from list Text
     if (targetEl.classList.contains("editBtn")) {
       targetEl
         .closest(".listItem")
@@ -31,16 +34,20 @@ clickHandler = (e) => {
         .removeAttribute("readonly");
       targetEl.closest(".listItem").querySelector(".listText").select();
     }
+
+    // 3) if target is remove Button, remove the task
     if (targetEl.classList.contains("removeBtn"))
       targetEl.closest(".listItem").remove();
   }
 };
 keyUpHandler = (e) => {
   targetEl = e.target;
+  // check if target element exists and if the 'Enter' key is pressed
   if (targetEl && e.key === "Enter") {
-    if (targetEl.classList.contains("listText")) {
+    // if target is list Text , add readonly attribute
+    if (targetEl.classList.contains("listText"))
       targetEl.setAttribute("readonly", true);
-    }
+    // if target is input Bar , call addTask function
     if (targetEl.classList.contains("inputBar")) addTask();
   }
 };
