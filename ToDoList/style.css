@@ -11,8 +11,8 @@ html {
 body {
   background-image: linear-gradient(
     to right,
-    rgb(171, 45, 175),
-    rgb(16, 174, 96)
+    rgb(136, 81, 190),
+    rgb(242, 21, 118)
   );
 }
 .container {
