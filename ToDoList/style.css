@@ -2,12 +2,13 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+body {
   background-image: linear-gradient(to right, #e22865, #37adcd);
-  /* background-color: lawngreen; */
 }
 .container {
   display: flex;
@@ -72,6 +73,7 @@ body {
   gap: 2rem;
 }
 .listItem {
+  border-radius: 1rem;
   font-size: 2rem;
   padding: 1.5rem;
   background-color: #fff;
@@ -83,11 +85,16 @@ body {
   border: none;
   height: 100%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   transition: all 0.4s;
   padding: 0 1rem;
+  color: rgb(13, 4, 56);
+  transition: 0.4s;
 }
-
+.listText:not(:read-only) {
+  color: #e22865;
+}
 .listText:focus {
   border: none;
   outline: none;
@@ -98,6 +105,9 @@ body {
   align-items: center;
   gap: 1rem;
   color: grey;
+}
+.actions ion-icon {
+  cursor: pointer;
 }
 .actions ion-icon:hover {
   color: rgb(48, 46, 46);
