@@ -12,7 +12,7 @@ _Making 1 project a day for practice_
 - Countdown Timer [Live Demo](https://countdown-timer-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/CountdownTimer)
 - To Do List App [Live Demo](https://todo-list-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/ToDoList)
 - Analog Clock (on the way...)
-- Key Code Generator (on the way...)
+- Key Code Generator [Live Demo]() | [Code]()
 - Binary Decoder App (on the way...)
 - Quiz App (on the way...)
 - rgb to hex converter (on the way...)
