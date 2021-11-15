@@ -11,8 +11,6 @@ const speedEl = document.querySelector(".windValue");
 const cityInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 
-// const apiKey = "1f0ed48420981eeb4231420b2b4de4cc";
-console.log(WEATHER_API_KEY);
 const apiKey = WEATHER_API_KEY;
 let weather = {
   fetchWeather: function (city) {
