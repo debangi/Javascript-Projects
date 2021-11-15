@@ -1,30 +1,30 @@
+import UNSPLASH_RANDOM_API_KEY from "./infiniteScrollApiKey.js";
+
 const imgContainer = document.querySelector(".imgContainer");
 const loaderEl = document.querySelector(".loader");
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
-
+const apiKey = UNSPLASH_RANDOM_API_KEY;
 let count = 10;
-const apiKey = "DmhktS54ycoRC5HL5IbwHULRejz0YZiG6bs7B9F2C1o";
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&orientation=landscape&count=${count}`;
 
-imageLoaded = () => {
+function imageLoaded() {
   imagesLoaded++;
-  console.log(imagesLoaded);
   if (imagesLoaded === totalImages) {
     ready = true;
     loaderEl.hidden = true;
     count = 30;
     apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&orientation=landscape&count=${count}`;
   }
-};
-setAttributes = (el, attributes) => {
+}
+function setAttributes(el, attributes) {
   for (const key in attributes) {
     el.setAttribute(key, attributes[key]);
   }
-};
-displayPhotos = () => {
+}
+function displayPhotos() {
   imagesLoaded = 0;
   totalImages = photosArray.length;
   photosArray.forEach((photo) => {
@@ -45,7 +45,7 @@ displayPhotos = () => {
     item.appendChild(img);
     imgContainer.appendChild(item);
   });
-};
+}
 async function getPhotos() {
   try {
     const response = await fetch(apiUrl);
