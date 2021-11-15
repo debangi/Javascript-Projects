@@ -5,9 +5,9 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
-const count = 30;
+let count = 10;
 const apiKey = "DmhktS54ycoRC5HL5IbwHULRejz0YZiG6bs7B9F2C1o";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&orientation=landscape&count=${count}`;
+let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&orientation=landscape&count=${count}`;
 
 imageLoaded = () => {
   imagesLoaded++;
@@ -15,6 +15,8 @@ imageLoaded = () => {
   if (imagesLoaded === totalImages) {
     ready = true;
     loaderEl.hidden = true;
+    count = 30;
+    apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&orientation=landscape&count=${count}`;
   }
 };
 setAttributes = (el, attributes) => {
