@@ -1,3 +1,5 @@
+const audioEl = document.getElementById("audio");
+
 const VoiceRSS = {
   speech: function (e) {
     this._validate(e), this._request(e);

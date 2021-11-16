@@ -1,6 +1,8 @@
+import VOICE_API_KEY from "./voiceApiKey.js";
+
 const audioEl = document.getElementById("audio");
 const button = document.getElementById("btn");
-
+const apiKey = VOICE_API_KEY;
 // VoiceRSS Javascript SDK
 
 ///////////////////////////////
@@ -13,7 +15,7 @@ function toggleButton() {
 // Passing Joke to VoiceRSS API
 function tellMe(joke) {
   VoiceRSS.speech({
-    key: "5ee308b2e2b44b43ba785da447e58503",
+    key: apiKey,
     src: joke,
     hl: "en-us",
     r: "0",
