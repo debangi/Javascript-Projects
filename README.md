@@ -22,6 +22,7 @@ _Making 1 project a day for practice_
 - Random Quote Generator [Live Demo](https://quotes-generator-debangi.netlify.app) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RandomQuote)
 - Weather App [Live Demo](https://weather-app-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/WeatherApp)
 - Infinite Scroll [Live Demo](https://infinite-scroll-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/InfinityScroll)
+- Joke Teller [Live Demo](https://joke-teller-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/JokeTeller)
 - Recipe App (On the way ...)
 - Joke Generator (On the way ...)
 - Number Facts (On the way ...)
