@@ -11,7 +11,7 @@ _Making 1 project a day for practice_
 - Stopwatch [Live Demo](https://stopwatch-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/Stopwatch)
 - Countdown Timer [Live Demo](https://countdown-timer-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/CountdownTimer)
 - To Do List App [Live Demo](https://todo-list-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/ToDoList)
-- Key Code Generator [Live Demo](https://key-code-generator-debangi.netlify.app/)
+- Key Code Generator [Live Demo](https://key-code-generator-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/KeyCodeGenerator)
 - Binary Decoder App (On the way ...)
 - Quiz App (On the way ...)
 - rgb to hex converter (On the way ...)
