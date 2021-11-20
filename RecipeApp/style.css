@@ -8,5 +8,77 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: rgba(26, 2, 22, 0.945);
+  background-color: rgba(1, 1, 26, 0.938);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+  width: 95%;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.brand {
+  font-size: 5rem;
+  color: #fff;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  width: 35rem;
+  height: 5rem;
+}
+.searchBar,
+.searchBtn {
+  border-radius: 100px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+}
+.searchBar {
+  background-color: rgba(100, 101, 102, 0.3);
+  padding: 0 1rem;
+  color: #fff;
+}
+.searchBar::placeholder {
+  color: rgb(255, 255, 255);
+}
+.searchBar:focus {
+  border: none;
+  outline: none;
+  background-color: rgba(121, 123, 126, 0.815);
+  color: rgb(255, 255, 255);
+}
+.searchBtn {
+  width: 5rem;
+  border: none;
+  background-color: #fff;
+}
+.searchBtn:active {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  color: #fff;
+}
+.searchResult {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+}
+.item {
+  margin: 1rem;
+  background-color: #fff;
 }
