@@ -4,15 +4,16 @@ const searchResultCtn = document.querySelector(".searchResult");
 let searchQuery = "";
 const appId = "b813395d";
 const apiKey = "ec6f3fc29ec4200d29c119d1a0c50039";
-// let recipes = {
-//     re
-// }
 
 searchBtn.addEventListener("click", () => {
   searchQuery = searchInput.value;
   console.log(searchQuery);
+  if (!searchQuery) return;
+  searchResultCtn.innerHTML = "";
   fetchAPI(searchQuery);
+  searchInput.value = "";
 });
+
 async function fetchAPI(searchQuery) {
   const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}&to=20`;
   const response = await fetch(baseUrl);
