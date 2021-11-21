@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -11,6 +12,7 @@ body {
   background-color: rgba(1, 1, 26, 0.938);
   display: flex;
   justify-content: center;
+  font-family: "Bree Serif", serif;
 }
 .container {
   margin: 2rem;
