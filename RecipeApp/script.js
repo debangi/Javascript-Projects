@@ -4,8 +4,7 @@ const searchInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 const searchResultCtn = document.querySelector(".searchResult");
 let searchQuery = "";
-// const appId = "b813395d";
-// const apiKey = "ec6f3fc29ec4200d29c119d1a0c50039";
+
 const appId = APP_ID;
 const apiKey = RECIPE_API_KEY;
 
