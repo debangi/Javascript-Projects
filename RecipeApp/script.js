@@ -23,6 +23,9 @@ async function fetchAPI(searchQuery) {
   const response = await fetch(baseUrl);
   const data = await response.json();
   loaderEl.hidden = true;
+  if (data.count === 0) {
+    errorMessage();
+  }
   console.log(data);
   generateHtml(data.hits);
 }
@@ -48,5 +51,12 @@ function generateHtml(results) {
                     </div>
                 </div>`;
   });
+  searchResultCtn.insertAdjacentHTML("beforeend", markup);
+}
+function errorMessage() {
+  let markup = ``;
+  markup = `<div class="item">
+                    <h1>No Search Results available for this keyword. Search Again !!!</h1>
+                </div>`;
   searchResultCtn.insertAdjacentHTML("beforeend", markup);
 }
