@@ -3,6 +3,10 @@ const loaderEl = document.querySelector(".loader");
 const searchInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 const searchResultCtn = document.querySelector(".searchResult");
+
+const paginationEl = document.querySelector(".pagination");
+const prevPageEl = document.querySelector(".prevPage");
+const nextPageEl = document.querySelector(".nextPage");
 let searchQuery = "";
 
 const appId = APP_ID;
@@ -39,34 +43,50 @@ function errorMessage() {
                 </div>`;
   searchResultCtn.insertAdjacentHTML("beforeend", markup);
 }
-async function fetchAPI(searchQuery) {
+async function fetchAPI(searchQuery, from = 0, to = 10) {
   loaderEl.hidden = false;
-  const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}`;
+  const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}&from=${from}&to=${to}`;
   const response = await fetch(baseUrl);
   const data = await response.json();
   loaderEl.hidden = true;
+  paginationEl.style.visibility = "visible";
+
   if (data.count === 0) {
     errorMessage();
   }
   console.log(data);
   generateHtml(data.hits);
 }
-function startSearch() {
+function loadRecipe(from, to) {
   searchQuery = searchInput.value;
   console.log(searchQuery);
   if (!searchQuery) return;
   searchResultCtn.innerHTML = "";
-  fetchAPI(searchQuery);
+  fetchAPI(searchQuery, from, to);
   searchInput.value = "";
 }
-
 function init() {
   loaderEl.hidden = true;
-  searchBtn.addEventListener("click", startSearch);
+  searchBtn.addEventListener("click", function () {
+    loadRecipe(from, to);
+  });
   searchInput.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
-      startSearch();
+      loadRecipe(from, to);
     }
   });
 }
 init();
+
+// for future pagination feature
+let currPage = 0;
+let from = 0;
+let to = 20;
+let totalPage;
+// function pagination() {
+//   // if its the first page, only  show next button
+//   // if its page 2 or more, show both buttons
+//   // if last page, only show prev button
+//   //if only one page, dont show
+// }
+////////////////////////////////////////

@@ -9,13 +9,13 @@
     <script type="module" src="./script.js" defer></script>
   </head>
   <body>
-    <div class="loader">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
-      </div>
-    </div>
     <div class="container">
+      <div class="loader">
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div class="header">
         <h1 class="brand">Recipe App</h1>
         <div class="search">
@@ -29,8 +29,19 @@
           </button>
         </div>
       </div>
-
       <div class="searchResult"></div>
+
+      <!-- Will add pagination later -->
+      <div class="pagination">
+        <div class="prevPage hidden">
+          <div class="prevNum">1</div>
+          <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="nextPage hidden">
+          <ion-icon name="arrow-forward"></ion-icon>
+          <div class="nextNum">3</div>
+        </div>
+      </div>
     </div>
 
     <!-- for ion icon -->
