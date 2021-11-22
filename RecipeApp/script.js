@@ -8,27 +8,6 @@ let searchQuery = "";
 const appId = APP_ID;
 const apiKey = RECIPE_API_KEY;
 
-loaderEl.hidden = true;
-searchBtn.addEventListener("click", () => {
-  searchQuery = searchInput.value;
-  console.log(searchQuery);
-  if (!searchQuery) return;
-  searchResultCtn.innerHTML = "";
-  fetchAPI(searchQuery);
-  searchInput.value = "";
-});
-async function fetchAPI(searchQuery) {
-  loaderEl.hidden = false;
-  const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}`;
-  const response = await fetch(baseUrl);
-  const data = await response.json();
-  loaderEl.hidden = true;
-  if (data.count === 0) {
-    errorMessage();
-  }
-  console.log(data);
-  generateHtml(data.hits);
-}
 function generateHtml(results) {
   let markup = ``;
   results.map((result) => {
@@ -60,3 +39,34 @@ function errorMessage() {
                 </div>`;
   searchResultCtn.insertAdjacentHTML("beforeend", markup);
 }
+async function fetchAPI(searchQuery) {
+  loaderEl.hidden = false;
+  const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}`;
+  const response = await fetch(baseUrl);
+  const data = await response.json();
+  loaderEl.hidden = true;
+  if (data.count === 0) {
+    errorMessage();
+  }
+  console.log(data);
+  generateHtml(data.hits);
+}
+function startSearch() {
+  searchQuery = searchInput.value;
+  console.log(searchQuery);
+  if (!searchQuery) return;
+  searchResultCtn.innerHTML = "";
+  fetchAPI(searchQuery);
+  searchInput.value = "";
+}
+
+function init() {
+  loaderEl.hidden = true;
+  searchBtn.addEventListener("click", startSearch);
+  searchInput.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      startSearch();
+    }
+  });
+}
+init();
