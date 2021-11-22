@@ -1,5 +1,5 @@
 import { RECIPE_API_KEY, APP_ID } from "./recipeApiKey.js";
-
+const loaderEl = document.querySelector(".loader");
 const searchInput = document.querySelector(".searchBar");
 const searchBtn = document.querySelector(".searchBtn");
 const searchResultCtn = document.querySelector(".searchResult");
@@ -8,6 +8,7 @@ let searchQuery = "";
 const appId = APP_ID;
 const apiKey = RECIPE_API_KEY;
 
+loaderEl.hidden = true;
 searchBtn.addEventListener("click", () => {
   searchQuery = searchInput.value;
   console.log(searchQuery);
@@ -16,11 +17,12 @@ searchBtn.addEventListener("click", () => {
   fetchAPI(searchQuery);
   searchInput.value = "";
 });
-
 async function fetchAPI(searchQuery) {
+  loaderEl.hidden = false;
   const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}`;
   const response = await fetch(baseUrl);
   const data = await response.json();
+  loaderEl.hidden = true;
   console.log(data);
   generateHtml(data.hits);
 }
