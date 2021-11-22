@@ -45,6 +45,7 @@ function errorMessage() {
 }
 async function fetchAPI(searchQuery, from = 0, to = 10) {
   loaderEl.hidden = false;
+  paginationEl.style.visibility = "hidden";
   const baseUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}&from=${from}&to=${to}`;
   const response = await fetch(baseUrl);
   const data = await response.json();
