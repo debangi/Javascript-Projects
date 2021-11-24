@@ -10,6 +10,7 @@ body {
   display: flex;
   align-items: center;
   font-family: "Nunito", sans-serif;
+  overflow: hidden;
 }
 
 /* Video Background */
@@ -107,8 +108,8 @@ button:hover {
 ul {
   margin-left: -45px;
 }
-
 li {
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -125,6 +126,27 @@ li span {
 .complete {
   position: relative;
   top: 60px;
+}
+.complete-title {
+  animation: complete 4s infinite;
+}
+@keyframes complete {
+  0% {
+    color: rgb(230, 20, 20);
+  }
+  25% {
+    color: rgb(240, 227, 52);
+  }
+  50% {
+    color: rgb(122, 230, 20);
+    transform: scale(1.5);
+  }
+  75% {
+    color: rgb(20, 94, 230);
+  }
+  100% {
+    color: rgb(230, 20, 195);
+  }
 }
 @media screen and (max-width: 1090px) {
   .video-background {
