@@ -77,6 +77,7 @@ label {
 }
 
 input {
+  font-family: "Nunito", sans-serif;
   width: 95%;
   margin-bottom: 10px;
   padding: 10px;
@@ -99,7 +100,9 @@ button {
   cursor: pointer;
   outline: none;
 }
-
+button:hover {
+  filter: brightness(110%);
+}
 /* Countdown */
 ul {
   margin-left: -45px;
