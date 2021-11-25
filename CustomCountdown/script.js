@@ -29,12 +29,14 @@ dateEl.setAttribute("min", today);
 //Populate our countdown / Complete UI
 function updateDOM() {
   countdownActive = setInterval(() => {
-    const now = new Date().getTime();
+    let currentTime = new Date();
+    let ISTOffset = 5 * 60 * 60 * 1000 + 30 * 60 * 1000; // 5 hrs + 30 mins for IST
+    const now = new Date(currentTime.getTime() + ISTOffset);
     const distance = countdownValue - now;
 
     const days = Math.floor(distance / day);
-    const hours = Math.floor((distance % day) / hour) - 5;
-    const minutes = Math.floor((distance % hour) / minute) - 30;
+    const hours = Math.floor((distance % day) / hour);
+    const minutes = Math.floor((distance % hour) / minute);
     const seconds = Math.floor((distance % minute) / second);
 
     //hide input
