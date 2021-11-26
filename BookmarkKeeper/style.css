@@ -107,7 +107,7 @@ a:active {
   z-index: 10;
 }
 .modalHeader {
-  background-color: rgba(151, 44, 212, 0.877);
+  background-color: rgb(151, 44, 212);
   color: #fff;
   font-size: 3rem;
   padding: 1.5rem;
@@ -117,7 +117,36 @@ a:active {
   padding: 2rem;
   background-color: whitesmoke;
 }
-
+.formGroup {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.formInput {
+  width: 97%;
+  padding: 0.5rem;
+  border: 2px solid rgb(151, 44, 212);
+  border-radius: 1rem;
+  outline: none;
+}
+.formLabel {
+  color: rgb(151, 44, 212);
+}
+button {
+  cursor: pointer;
+  color: #fff;
+  background: rgb(151, 44, 212);
+  height: 3rem;
+  width: 10rem;
+  border: none;
+  border-radius: 1rem;
+}
+button:hover {
+  filter: brightness(130%);
+}
+button:focus {
+  outline: none;
+}
 @keyframes modalopen {
   from {
     opacity: 0;
