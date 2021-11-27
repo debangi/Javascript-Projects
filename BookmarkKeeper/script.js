@@ -7,8 +7,11 @@ const websiteNameEl = document.querySelector(".websiteName");
 const websiteUrlEl = document.querySelector(".websiteUrl");
 const bookmarksContainer = document.getElementById("bookmarksContainer");
 
+let bookmarks = [];
+
 function showModal() {
   modalContainer.classList.add("showModal");
+  websiteNameEl.focus();
 }
 modalShow.addEventListener("click", showModal);
 modalClose.addEventListener("click", () =>
@@ -41,9 +44,17 @@ function storeBookmark(e) {
   if (!urlValue.includes("http://") && !urlValue.includes("https://")) {
     urlValue = `https://${urlValue}`;
   }
-  console.log(nameValue, urlValue);
   if (!validateForm(nameValue, urlValue)) {
     return false;
   }
+  const bookmark = {
+    name: nameValue,
+    url: urlValue,
+  };
+  bookmarks.push(bookmark);
+  console.log(bookmarks);
+  localStorage.setItem("bookmarks", bookmarks);
+  bookmarkForm.reset();
+  websiteNameEl.focus();
 }
 bookmarkForm.addEventListener("submit", storeBookmark);
