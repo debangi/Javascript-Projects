@@ -77,7 +77,7 @@ a:active {
 }
 .modalContainer {
   background-color: rgba(0, 0, 0, 0.5);
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
