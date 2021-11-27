@@ -19,3 +19,14 @@ window.addEventListener("click", (e) => {
     modalContainer.classList.remove("showModal");
   }
 });
+
+function storeBookmark(e) {
+  e.preventDefault();
+  const name = websiteNameEl.value;
+  let urlValue = websiteUrlEl.value;
+  if (!urlValue.includes("http://") && !urlValue.includes("https://")) {
+    urlValue = `https://${urlValue}`;
+  }
+  console.log(name, url);
+}
+bookmarkForm.addEventListener("submit", storeBookmark);
