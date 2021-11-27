@@ -20,13 +20,26 @@ window.addEventListener("click", (e) => {
   }
 });
 
+function validateForm(nameValue, urlValue) {
+  const expression =
+    /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+  const regex = new RegExp(expression);
+  if (urlValue.match(regex)) {
+    console.log("matches");
+  }
+  if (!urlValue.match(regex)) {
+    alert("Please provide a valid URL");
+    return false;
+  }
+}
 function storeBookmark(e) {
   e.preventDefault();
-  const name = websiteNameEl.value;
+  const nameValue = websiteNameEl.value;
   let urlValue = websiteUrlEl.value;
   if (!urlValue.includes("http://") && !urlValue.includes("https://")) {
     urlValue = `https://${urlValue}`;
   }
-  console.log(name, url);
+  console.log(nameValue, urlValue);
+  validateForm(nameValue, urlValue);
 }
 bookmarkForm.addEventListener("submit", storeBookmark);
