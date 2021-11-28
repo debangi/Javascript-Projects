@@ -29,9 +29,12 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 .item {
   background-color: rgba(0, 0, 0, 0.3);
