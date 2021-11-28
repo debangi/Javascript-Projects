@@ -37,6 +37,22 @@ function validateForm(nameValue, urlValue) {
   }
   return true;
 }
+
+//fetch from local Storage
+function fetchBookmarks() {
+  if (localStorage.getItem("bookmarks")) {
+    bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  } else {
+    bookmarks = [
+      {
+        name: "Google",
+        url: "https://google.com",
+      },
+    ];
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }
+  console.log(bookmarks);
+}
 function storeBookmark(e) {
   e.preventDefault();
   const nameValue = websiteNameEl.value;
@@ -52,9 +68,11 @@ function storeBookmark(e) {
     url: urlValue,
   };
   bookmarks.push(bookmark);
-  console.log(bookmarks);
-  localStorage.setItem("bookmarks", bookmarks);
+  // console.log(JSON.stringify(bookmarks));
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
   bookmarkForm.reset();
   websiteNameEl.focus();
 }
 bookmarkForm.addEventListener("submit", storeBookmark);
+fetchBookmarks();
