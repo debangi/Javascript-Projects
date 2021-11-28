@@ -81,6 +81,18 @@ function fetchBookmarks() {
   }
   buildBookmarks();
 }
+
+function deleteBookmark(url) {
+  console.log(url);
+  bookmarksContainer.innerHTML = "";
+  bookmarks.forEach((bookmark, i) => {
+    if (bookmark.url === url) {
+      bookmarks.splice(i, 1);
+    }
+  });
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
+}
 function storeBookmark(e) {
   e.preventDefault();
   const nameValue = websiteNameEl.value;
@@ -98,6 +110,7 @@ function storeBookmark(e) {
   bookmarks.push(bookmark);
   // console.log(JSON.stringify(bookmarks));
   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  bookmarksContainer.innerHTML = "";
   fetchBookmarks();
   bookmarkForm.reset();
   websiteNameEl.focus();
