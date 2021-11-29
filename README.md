@@ -6,6 +6,7 @@ _Making 1 project a day for practice_
 
 - Random Color Generator [Live Demo](https://random-color-debangi.netlify.app) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RandomColors)
 - Random Gradient Generator [Live Demo](https://gradient-generator-debangi.netlify.app) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/GradientGenerator)
+- Form Validation [Live Demo](https://form-validation-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/FormValidator)
 - Simple Calculator [Live Demo](https://simple-calculator-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/SimpleCalculator)
 - Digital Clock [Live Demo](https://digital-clock-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/DigitalClock)
 - Stopwatch [Live Demo](https://stopwatch-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/Stopwatch)
