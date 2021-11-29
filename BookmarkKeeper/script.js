@@ -108,7 +108,6 @@ function storeBookmark(e) {
     url: urlValue,
   };
   bookmarks.push(bookmark);
-  // console.log(JSON.stringify(bookmarks));
   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   bookmarksContainer.innerHTML = "";
   fetchBookmarks();
