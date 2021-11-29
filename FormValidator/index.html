@@ -14,11 +14,24 @@
       <form class="form" id="form">
         <div class="formGroup">
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Full Name" required />
+          <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            minlength="3"
+            maxlength="100"
+            required
+          />
         </div>
         <div class="formGroup">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="Phone Number" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            pattern="[0-9]{10}"
+            required
+          />
         </div>
         <div class="formGroup">
           <label for="email">Email ID</label>
@@ -34,11 +47,13 @@
           <input type="url" id="website" placeholder="Website URL" required />
         </div>
         <div class="formGroup">
-          <label for="password1">Password</label>
+          <label for="password1">Create Password (Min. 8 Characters)</label>
           <input
             type="password"
             id="password1"
             placeholder="Create Password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            title="Please include atleast 1 uppercase character, atleast 1 lowerscale character, atleast 1 special character"
             required
           />
         </div>
@@ -48,6 +63,7 @@
             type="password"
             id="password2"
             placeholder="Confirm Password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
             required
           />
         </div>
