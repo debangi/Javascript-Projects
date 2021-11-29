@@ -13,6 +13,7 @@ function validateForm() {
     messageEl.textContent = "Please Fill out all fields!";
     messageEl.style.color = "red";
     messageCtn.style.borderColor = "red";
+    return;
   }
   if (password1El.value === password2El.value) {
     passwordsMatch = true;
@@ -25,6 +26,12 @@ function validateForm() {
     messageCtn.style.borderColor = "red";
     password1El.style.borderColor = "red";
     password2El.style.borderColor = "red";
+    return;
+  }
+  if (isValid && passwordsMatch) {
+    messageEl.textContent = "Successfully Registered!";
+    messageEl.style.color = "green";
+    messageCtn.style.borderColor = "green";
   }
 }
 function processFormData(e) {
