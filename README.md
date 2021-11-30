@@ -31,3 +31,7 @@ _Making 1 project a day for practice_
 - Pokemon API (On the way ...)
 - Wikipedia API (On the way ...)
 - Marvel API (On the way ...)
+
+## LEVEL 2 - Games using Javascript
+
+- Rock Paper Scissors [Live Demo]() | [Code]()
