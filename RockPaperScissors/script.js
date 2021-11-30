@@ -5,6 +5,7 @@ const playerChoiceEl = document.getElementById("playerChoice");
 const computerScoreEl = document.getElementById("computerScore");
 const computerChoiceEl = document.getElementById("computerChoice");
 const resultText = document.getElementById("resultText");
+const resetBtn = document.getElementById("reset");
 
 const playerRock = document.getElementById("playerRock");
 const playerPaper = document.getElementById("playerPaper");
@@ -162,6 +163,7 @@ function init() {
   playerSpock.addEventListener("click", function () {
     select("spock");
   });
+  resetBtn.addEventListener("click", resetAll);
   resetAll();
 }
 init();
