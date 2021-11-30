@@ -34,6 +34,16 @@ function resetSelected() {
     icon.classList.remove("selected");
   });
 }
+function resetAll() {
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  computerScoreEl.textContent = computerScoreNumber;
+  playerChoiceEl.textContent = "";
+  computerChoiceEl.textContent = "";
+  resultText.textContent = "";
+  resetSelected();
+}
 function computerRandomChoice() {
   const computerChoiceNumber = Math.floor(Math.random() * 5) + 1;
   switch (computerChoiceNumber) {
@@ -131,3 +141,4 @@ function select(playerChoice) {
       break;
   }
 }
+resetAll();
