@@ -146,4 +146,22 @@ function select(playerChoice) {
       break;
   }
 }
-resetAll();
+function init() {
+  playerRock.addEventListener("click", function () {
+    select("rock");
+  });
+  playerPaper.addEventListener("click", function () {
+    select("paper");
+  });
+  playerScissors.addEventListener("click", function () {
+    select("scissors");
+  });
+  playerLizard.addEventListener("click", function () {
+    select("lizard");
+  });
+  playerSpock.addEventListener("click", function () {
+    select("spock");
+  });
+  resetAll();
+}
+init();
