@@ -30,6 +30,8 @@ let computerScoreNumber = 0;
 let computerChoice = "";
 
 function resetSelected() {
+  stopConfetti();
+  removeConfetti();
   allGameIcons.forEach((icon) => {
     icon.classList.remove("selected");
   });
@@ -95,9 +97,11 @@ function displayComputerChoice() {
 function updateScore(playerChoice) {
   if (playerChoice === computerChoice) {
     resultText.textContent = "It's a tie.";
+    stopConfetti();
   } else {
     const choice = choices[playerChoice];
     if (choice.defeats.indexOf(computerChoice) > -1) {
+      startConfetti();
       resultText.textContent = "You Won!";
       playerScoreNumber++;
       playerScoreEl.textContent = playerScoreNumber;
