@@ -164,6 +164,8 @@ function init() {
     select("spock");
   });
   resetBtn.addEventListener("click", resetAll);
-  resetAll();
 }
+resetAll();
 init();
+//  window.select=select;
+// window.resetAll=resetAll;
