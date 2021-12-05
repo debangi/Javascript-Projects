@@ -37,8 +37,9 @@ function updateDOM() {
     footer.classList.add("textMuted");
     const date = document.createElement("strong");
     date.textContent = result.date;
+    const copyrightResult = result.copyright ?? "";
     const copyright = document.createElement("span");
-    copyright.textContent = ` ${result.copyright}`;
+    copyright.textContent = ` ${copyrightResult}`;
 
     footer.append(date, copyright);
     cardBody.append(cardTitle, saveText, cardText, footer);
