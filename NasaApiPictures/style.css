@@ -12,7 +12,6 @@ body {
   overflow-x: hidden;
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 1rem;
-  line-height: 1.8rem;
 }
 .container {
   position: relative;
@@ -122,9 +121,7 @@ h3 {
 
 @media screen and (max-width: 800px) {
   body {
-    line-height: 1.4rem;
     font-size: 0.9rem;
-    text-align: justify;
   }
   .imagesContainer {
     width: 100%;
