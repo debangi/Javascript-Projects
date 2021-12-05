@@ -57,22 +57,27 @@ body {
   z-index: -1;
 }
 .clickable {
-  color: rgb(197, 54, 78);
+  color: rgb(197, 54, 149);
   cursor: pointer;
   user-select: none;
 }
 .clickable:hover {
-  color: rgb(255, 0, 43);
+  color: rgb(194, 0, 74);
 }
 h3 {
   margin: 2rem;
 }
 /* Images Container */
 .imagesContainer {
+  width: 80rem;
   margin-top: 5rem;
 }
 
 .card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background: white;
   margin: 10px 10px 20px;
   border-radius: 5px;
@@ -83,11 +88,20 @@ h3 {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
 .cardBody {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
 }
-
+.addFav {
+  font-weight: 600;
+}
 .cardTitle {
   margin: 1rem auto;
   font-size: 2.4rem;
@@ -95,7 +109,7 @@ h3 {
 
 /* Save Confirmation */
 .saveConfirmed {
-  background: white;
+  background: rgb(55, 228, 20);
   padding: 0.8rem 1.6rem;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
