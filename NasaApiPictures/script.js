@@ -29,7 +29,10 @@ function saveFavorite(itemUrl) {
     }
   });
 }
-function updateDOM() {
+function createDOMNodes(page) {
+  const currentArray =
+    page === "results" ? resultsArray : Object.values(favorites);
+  console.log("current", currentArray);
   resultsArray.forEach((result) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -68,11 +71,18 @@ function updateDOM() {
     imagesContainer.appendChild(card);
   });
 }
+function updateDOM(page) {
+  if (localStorage.getItem("nasaFavorites")) {
+    favorites = JSON.parse(localStorage.getItem("nasaFavorites"));
+    console.log(favorites);
+  }
+  createDOMNodes(page);
+}
 async function getNasaPictures() {
   try {
     const response = await fetch(apiUrl);
     resultsArray = await response.json();
-    updateDOM();
+    updateDOM("favorites");
   } catch (err) {
     console.log(err);
   }
