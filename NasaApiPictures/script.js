@@ -13,27 +13,33 @@ let resultsArray = [];
 let favorites = {};
 
 function saveFavorite(itemUrl) {
-  console.log(resultsArray);
+  console.log("results", resultsArray);
+  console.log("favorites", favorites);
   resultsArray.forEach((item) => {
-    if (item.url.includes(itemUrl)) {
-      savedText.textContent = "ADDED!";
-      if (favorites[itemUrl]) {
-        savedText.textContent = "Already Added";
-      }
+    if (item.url.includes(itemUrl) && !favorites[itemUrl]) {
       favorites[itemUrl] = item;
       saveConfirmed.hidden = false;
       setTimeout(() => {
         saveConfirmed.hidden = true;
       }, 1000);
+
       localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
     }
   });
 }
+// function removeFavorite(itemUrl) {
+//   if (favorites[itemUrl]) {
+//     delete favorites[itemUrl];
+//     localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
+//     updateDOM("favorites");
+//     console.log("deleed");
+//   }
+// }
 function createDOMNodes(page) {
   const currentArray =
     page === "results" ? resultsArray : Object.values(favorites);
-  console.log("current", currentArray);
-  resultsArray.forEach((result) => {
+  console.log("current", page, currentArray);
+  currentArray.forEach((result) => {
     const card = document.createElement("div");
     card.classList.add("card");
     const link = document.createElement("a");
@@ -52,8 +58,13 @@ function createDOMNodes(page) {
     cardTitle.textContent = result.title;
     const saveText = document.createElement("p");
     saveText.classList.add("clickable");
-    saveText.textContent = "Add To Favorites";
-    saveText.setAttribute("onclick", `saveFavorite('${result.url}')`);
+    if (page === "results") {
+      saveText.textContent = "Add To Favorites";
+      saveText.setAttribute("onclick", `saveFavorite('${result.url}')`);
+    } else {
+      saveText.textContent = "Remove Favorite";
+      saveText.setAttribute("onclick", `removeFavorite('${result.url}')`);
+    }
     const cardText = document.createElement("p");
     cardText.textContent = result.explanation;
     const footer = document.createElement("small");
@@ -74,7 +85,7 @@ function createDOMNodes(page) {
 function updateDOM(page) {
   if (localStorage.getItem("nasaFavorites")) {
     favorites = JSON.parse(localStorage.getItem("nasaFavorites"));
-    console.log(favorites);
+    // console.log(favorites);
   }
   createDOMNodes(page);
 }
