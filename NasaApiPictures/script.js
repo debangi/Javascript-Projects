@@ -27,14 +27,14 @@ function saveFavorite(itemUrl) {
     }
   });
 }
-// function removeFavorite(itemUrl) {
-//   if (favorites[itemUrl]) {
-//     delete favorites[itemUrl];
-//     localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
-//     updateDOM("favorites");
-//     console.log("deleed");
-//   }
-// }
+function removeFavorite(itemUrl) {
+  if (favorites[itemUrl]) {
+    delete favorites[itemUrl];
+    localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
+    updateDOM("favorites");
+    console.log("deleed");
+  }
+}
 function createDOMNodes(page) {
   const currentArray =
     page === "results" ? resultsArray : Object.values(favorites);
