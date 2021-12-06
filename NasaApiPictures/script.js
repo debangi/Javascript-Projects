@@ -21,11 +21,11 @@ function saveFavorite(itemUrl) {
         savedText.textContent = "Already Added";
       }
       favorites[itemUrl] = item;
-      console.log(favorites);
       saveConfirmed.hidden = false;
       setTimeout(() => {
         saveConfirmed.hidden = true;
       }, 1000);
+      localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
     }
   });
 }
@@ -79,4 +79,3 @@ async function getNasaPictures() {
 }
 
 getNasaPictures();
-console.log(resultsArray);
