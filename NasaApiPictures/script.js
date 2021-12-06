@@ -13,8 +13,10 @@ let resultsArray = [];
 let favorites = {};
 
 function saveFavorite(itemUrl) {
+  console.log(resultsArray);
   resultsArray.forEach((item) => {
     if (item.url.includes(itemUrl)) {
+      savedText.textContent = "ADDED!";
       if (favorites[itemUrl]) {
         savedText.textContent = "Already Added";
       }
@@ -77,3 +79,4 @@ async function getNasaPictures() {
 }
 
 getNasaPictures();
+console.log(resultsArray);
