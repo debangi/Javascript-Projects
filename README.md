@@ -26,6 +26,7 @@ _Making 1 project a day for practice_
 - Infinite Scroll [Live Demo](https://infinite-scroll-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/InfinityScroll)
 - Joke Teller [Live Demo](https://joke-teller-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/JokeTeller)
 - Recipe App [Live Demo](https://recipe-app-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RecipeApp)
+- NASA APOD API [Live Demo](https://nasa-apod-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/NasaApiPictures)
 - Joke Generator (On the way ...)
 - Number Facts (On the way ...)
 - Pokemon API (On the way ...)
