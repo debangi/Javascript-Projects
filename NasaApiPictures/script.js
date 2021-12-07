@@ -2,7 +2,6 @@ const resultsNav = document.getElementById("resultsNav");
 const favouritesNav = document.getElementById("favouritesNav");
 const imagesContainer = document.querySelector(".imagesContainer");
 const saveConfirmed = document.querySelector(".saveConfirmed");
-const savedText = document.querySelector(".savedText");
 const loader = document.querySelector(".loader");
 
 const count = 10;
@@ -13,8 +12,6 @@ let resultsArray = [];
 let favorites = {};
 
 function saveFavorite(itemUrl) {
-  console.log("results", resultsArray);
-  console.log("favorites", favorites);
   resultsArray.forEach((item) => {
     if (item.url.includes(itemUrl) && !favorites[itemUrl]) {
       favorites[itemUrl] = item;
@@ -32,13 +29,11 @@ function removeFavorite(itemUrl) {
     delete favorites[itemUrl];
     localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
     updateDOM("favorites");
-    console.log("deleed");
   }
 }
 function createDOMNodes(page) {
   const currentArray =
     page === "results" ? resultsArray : Object.values(favorites);
-  console.log("current", page, currentArray);
   currentArray.forEach((result) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -50,6 +45,7 @@ function createDOMNodes(page) {
     image.classList.add("card-img-top");
     image.src = result.url;
     image.alt = "NASA Picture of the Day";
+
     image.loading = "lazy";
     const cardBody = document.createElement("div");
     cardBody.classList.add("cardBody");
@@ -85,15 +81,15 @@ function createDOMNodes(page) {
 function updateDOM(page) {
   if (localStorage.getItem("nasaFavorites")) {
     favorites = JSON.parse(localStorage.getItem("nasaFavorites"));
-    // console.log(favorites);
   }
+  imagesContainer.textContent = "";
   createDOMNodes(page);
 }
 async function getNasaPictures() {
   try {
     const response = await fetch(apiUrl);
     resultsArray = await response.json();
-    updateDOM("favorites");
+    updateDOM("results");
   } catch (err) {
     console.log(err);
   }
