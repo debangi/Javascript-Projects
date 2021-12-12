@@ -87,6 +87,9 @@ function updateDOM() {
   updatedOnLoad = true;
   updateSavedColumns();
 }
+function addToColumn(column) {
+  console.log(addItems[column].textContent);
+}
 function showInputBox(column) {
   addBtns[column].style.visibility = "hidden";
   saveItemBtns[column].style.display = "flex";
@@ -96,6 +99,7 @@ function hideInputBox(column) {
   addBtns[column].style.visibility = "visible";
   saveItemBtns[column].style.display = "none";
   addItemContainers[column].style.display = "none";
+  addToColumn(column);
 }
 function rebuildArrays() {
   backlogListArray = [];
