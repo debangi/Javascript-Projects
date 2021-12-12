@@ -54,11 +54,6 @@ function updateSavedColumns() {
 
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
-  // console.log("columnEl:", columnEl);
-  // console.log("column:", column);
-  // console.log("item:", item);
-  // console.log("index:", index);m
-  // List Item
   const listEl = document.createElement("li");
   listEl.classList.add("drag-item");
   listEl.textContent = item;
@@ -96,8 +91,6 @@ function updateDOM() {
   updateSavedColumns();
 }
 function rebuildArrays() {
-  console.log(backlogList.children);
-  console.log(progressList.children);
   backlogListArray = [];
   for (let i = 0; i < backlogList.children.length; i++) {
     backlogListArray.push(backlogList.children[i].textContent);
@@ -118,7 +111,6 @@ function rebuildArrays() {
 }
 function drag(e) {
   draggedItem = e.target;
-  console.log("dragged", draggedItem);
 }
 function allowDrop(e) {
   e.preventDefault();
