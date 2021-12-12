@@ -90,12 +90,16 @@ function updateDOM() {
   onHoldListArray.forEach((onHoldItem, i) => {
     createItemEl(onHoldList, 0, onHoldItem, i);
   });
-  // Progress Column
-  // Complete Column
-  // On Hold Column
+
   // Run getSavedColumns only once, Update Local Storage
 }
-
+function rebuildArrays() {
+  console.log(backlogList.children);
+  console.log(progressList.children);
+  for (let i = 0; i < backlogList.children.length; i++) {
+    backlogListArray.push(backlogList.children[i].textContent);
+  }
+}
 function drag(e) {
   draggedItem = e.target;
   console.log("dragged", draggedItem);
@@ -114,6 +118,7 @@ function drop(e) {
   });
   const parent = listColumns[currentColumn];
   parent.appendChild(draggedItem);
+  rebuildArrays();
 }
 
 updateDOM();
