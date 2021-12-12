@@ -37,7 +37,6 @@ function getSavedColumns() {
     onHoldListArray = ["Being uncool"];
   }
 }
-
 // Set localStorage Arrays
 function updateSavedColumns() {
   listArrays = [
@@ -51,7 +50,6 @@ function updateSavedColumns() {
     localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArrays[i]));
   });
 }
-
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
   const listEl = document.createElement("li");
@@ -61,7 +59,6 @@ function createItemEl(columnEl, column, item, index) {
   listEl.setAttribute("ondragstart", "drag(event)");
   columnEl.appendChild(listEl);
 }
-
 // Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
   // Check localStorage once
