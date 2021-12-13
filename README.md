@@ -36,3 +36,4 @@ _Making 1 project a day for practice_
 ## LEVEL 2 - Games using Javascript
 
 - Rock Paper Scissors [Live Demo](https://rockpaper-game-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RockPaperScissors)
+- Kanban Board [Live Demo](https://kanban-board-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/drag-and-drop)
