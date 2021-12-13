@@ -22,8 +22,8 @@ let listArrays = [];
 // Drag Functionality
 let draggedItem;
 let currentColumn;
+let dragging = false;
 
-// Get Arrays from localStorage if available, set default values if not
 function getSavedColumns() {
   if (localStorage.getItem("backlogItems")) {
     backlogListArray = JSON.parse(localStorage.backlogItems);
@@ -37,7 +37,6 @@ function getSavedColumns() {
     onHoldListArray = ["Being uncool"];
   }
 }
-// Set localStorage Arrays
 function updateSavedColumns() {
   listArrays = [
     backlogListArray,
@@ -54,7 +53,6 @@ function filterArray(array) {
   const filteredArray = array.filter((item) => item !== null);
   return filteredArray;
 }
-// Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
   const listEl = document.createElement("li");
   listEl.classList.add("drag-item");
@@ -66,7 +64,6 @@ function createItemEl(columnEl, column, item, index) {
   listEl.id = index;
   listEl.setAttribute("onfocusout", `updateItem(${index}, ${column})`);
 }
-// Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
   // Check localStorage once
   if (!updatedOnLoad) {
@@ -100,12 +97,15 @@ function updateDOM() {
 }
 function updateItem(id, column) {
   const selectedArray = listArrays[column];
-
   const selectedColumnEl = listColumns[column].children;
-  if (!selectedColumnEl[id].textContent) {
-    delete selectedArray[id];
+  if (!dragging) {
+    if (!selectedColumnEl[id].textContent) {
+      delete selectedArray[id];
+    } else {
+      selectedArray[id] = selectedColumnEl[id].textContent;
+    }
+    updateDOM();
   }
-  updateDOM();
 }
 function addToColumn(column) {
   const itemText = addItems[column].textContent;
@@ -146,6 +146,7 @@ function rebuildArrays() {
 }
 function drag(e) {
   draggedItem = e.target;
+  dragging = true;
 }
 function allowDrop(e) {
   e.preventDefault();
@@ -161,6 +162,7 @@ function drop(e) {
   });
   const parent = listColumns[currentColumn];
   parent.appendChild(draggedItem);
+  dragging = false;
   rebuildArrays();
 }
 
