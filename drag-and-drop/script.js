@@ -88,7 +88,11 @@ function updateDOM() {
   updateSavedColumns();
 }
 function addToColumn(column) {
-  console.log(addItems[column].textContent);
+  const itemText = addItems[column].textContent;
+  const selectedArray = listArrays[column];
+  selectedArray.push(itemText);
+  addItems[column].textContent = "";
+  updateDOM();
 }
 function showInputBox(column) {
   addBtns[column].style.visibility = "hidden";
