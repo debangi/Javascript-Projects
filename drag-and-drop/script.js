@@ -50,6 +50,10 @@ function updateSavedColumns() {
     localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArrays[i]));
   });
 }
+function filterArray(array) {
+  const filteredArray = array.filter((item) => item !== null);
+  return filteredArray;
+}
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
   const listEl = document.createElement("li");
@@ -58,6 +62,9 @@ function createItemEl(columnEl, column, item, index) {
   listEl.draggable = true;
   listEl.setAttribute("ondragstart", "drag(event)");
   columnEl.appendChild(listEl);
+  listEl.contentEditable = true;
+  listEl.id = index;
+  listEl.setAttribute("onfocusout", `updateItem(${index}, ${column})`);
 }
 // Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
@@ -70,22 +77,35 @@ function updateDOM() {
   backlogListArray.forEach((backlogItem, i) => {
     createItemEl(backlogList, 0, backlogItem, i);
   });
+  backlogListArray = filterArray(backlogListArray);
   progressList.textContent = "";
   progressListArray.forEach((progressItem, i) => {
-    createItemEl(progressList, 0, progressItem, i);
+    createItemEl(progressList, 1, progressItem, i);
   });
+  progressListArray = filterArray(progressListArray);
   completeList.textContent = "";
   completeListArray.forEach((completeItem, i) => {
-    createItemEl(completeList, 0, completeItem, i);
+    createItemEl(completeList, 2, completeItem, i);
   });
+  completeListArray = filterArray(completeListArray);
   onHoldList.textContent = "";
   onHoldListArray.forEach((onHoldItem, i) => {
-    createItemEl(onHoldList, 0, onHoldItem, i);
+    createItemEl(onHoldList, 3, onHoldItem, i);
   });
+  onHoldListArray = filterArray(onHoldListArray);
 
   // Run getSavedColumns only once, Update Local Storage
   updatedOnLoad = true;
   updateSavedColumns();
+}
+function updateItem(id, column) {
+  const selectedArray = listArrays[column];
+
+  const selectedColumnEl = listColumns[column].children;
+  if (!selectedColumnEl[id].textContent) {
+    delete selectedArray[id];
+  }
+  updateDOM();
 }
 function addToColumn(column) {
   const itemText = addItems[column].textContent;
