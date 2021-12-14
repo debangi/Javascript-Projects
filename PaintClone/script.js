@@ -68,6 +68,8 @@ function switchToBrush() {
   eraser.style.color = "white";
   currentColor = `#${brushColorBtn.value}`;
   currentSize = 10;
+  brushSlider.value = 10;
+  displayBrushSize();
 }
 
 // Create Canvas
