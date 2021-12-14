@@ -37,3 +37,4 @@ _Making 1 project a day for practice_
 
 - Rock Paper Scissors [Live Demo](https://rockpaper-game-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/RockPaperScissors)
 - Kanban Board [Live Demo](https://kanban-board-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/drag-and-drop)
+- Paint [Live Demo](https://paint-debangi.netlify.app/) | [Code](https://github.com/debangi/Javascript-Projects/tree/master/PaintClone)
